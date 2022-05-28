@@ -1,0 +1,11 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	{% for p in profile_list %}
+		<div class="element">
+			<h2>{{p.user.first_name}} {{p.user.last_name}}</h2>
+			<p>@{{p.user.username}}</p>
+			<a href="{% url 'profile' userId=p.user.pk %}" class="openButton">View profile</a>
+			<hr>
+		</div>
+	{% endfor %}
+{% endblock %}

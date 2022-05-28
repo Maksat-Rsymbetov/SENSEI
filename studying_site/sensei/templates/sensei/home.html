@@ -1,0 +1,11 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	{% for c in course_list %}
+	<div class="element">
+		<h2>{{c.name}}</h2>
+		<p>{{c.description}}</p>
+		<p>Author: <a href="{% url 'profile' c.author_id %}">@{{c.author.username}}</a></p>
+		<a href="{% url 'course' c.pk %}" class="openButton">View Course</a>
+	</div>
+	{% endfor %}
+{% endblock %}

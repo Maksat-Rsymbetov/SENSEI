@@ -1,0 +1,20 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	{% for l in lesson_list %}
+		<div class="element">
+			<h1>{{ l.lesson_name }}</h1>
+			<p>{{ l.content }}</p>
+			<a href="{% url 'lesson' l.pk %}" class="openButton">View lesson</a>
+			<hr>
+		</div>
+	{% endfor %}
+	<hr>
+	<!-- {% with lesson_list|first as ff %} -->
+	{% if request.user == cc.author %}
+		<a href="{% url 'create_lesson' courseId %}" class="openButton">Add lesson</a>
+	{% endif %}
+<!-- 	{% endwith %} -->
+	{% if request.user.is_authenticated %}	
+		<a href="{% url 'reviews' courseId %}" class="openButton">Feedback</a>
+	{% endif %}
+{% endblock %}

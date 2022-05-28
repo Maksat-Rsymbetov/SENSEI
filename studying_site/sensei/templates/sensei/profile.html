@@ -1,0 +1,12 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	<div>
+		{% if p.avatar %}
+			<img src="{{p.avatar.url}}">
+		{% endif %}
+		<h1>{{ u.first_name }} {{ u.last_name }}</h1>
+		<p>{{ u.username }}</p>
+		<p>About this sensei:</p>
+		<p>{{p.about}}</p>
+	</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'sensei/css/styles.css' %}">
+	<title>S.E.N.S.E.I</title>
+</head>
+<body>
+	<h1 id="title">Teach anything, Learn anything</h1>
+	{% block menu %}
+		{% if request.user.is_authenticated %}
+			<h1>Logged in as: {{request.user.first_name}}</h1>
+			<div class="element">
+				<a href="{% url 'users' %}" class="myButton">Senseis</a>
+				<a href="{% url 'home' %}" class="myButton">Courses</a>
+				<a href="{% url 'logout' %}" class="myButton">Log out</a>
+				<a href="{% url 'create_course' %}" class="myButton">Create course</a>
+			</div>
+		{% endif %}	
+	{% endblock menu %}
+
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

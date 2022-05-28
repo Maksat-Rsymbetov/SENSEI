@@ -1,0 +1,23 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	<div>
+		<h1>{{lesson.lesson_name}}</h1>
+		<p>{{lesson.content}}</p>
+		{% for a in attachments %}
+			<div class="element">
+				<p><i>{{a.comment}}</i></p>
+				<a href="{{MEDIA_URL}}{{a.file.url}}" download class="openButton">Download file</a>
+				<hr>
+			</div>
+		{% endfor %}
+		{% if request.user.username == lesson.course.author.username %}
+		<a href="{% url 'attach' lessonId %}" class="openButton">Attach file</a>
+		{% endif %}
+		<!-- {% for c in comments %}
+			<div>
+				<p><b>{{c.commentator.username}}</b></p>
+				<p>{{c.comment}}</p>
+			</div>
+		{% endfor %} -->
+	</div>
+{% endblock %}

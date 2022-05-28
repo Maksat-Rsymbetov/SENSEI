@@ -1,0 +1,10 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	<form action="{% url 'create_course' %}" method="post">
+		{% csrf_token %}
+		<div>{{for.non_field_errors}}</div>
+		{{ form.as_p }}
+
+		<button type="submit">Create course</button>
+	</form>
+{% endblock %}

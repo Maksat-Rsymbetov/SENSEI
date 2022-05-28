@@ -1,0 +1,13 @@
+{% extends 'sensei/base.html' %}
+{% block content %}
+	{% for r in review_list %}
+		<div class="element">
+			<h3>{{ r.title }}</h3>
+			<p>{{r.content}}</p>
+			<p class="reviewer">posted by: {{r.reviewer.username}}</p>
+		</div>
+	{% endfor %}
+	{% if request.user.is_authenticated %}
+		<a href="{% url 'write_review' courseId %}" class="openButton">Write review</a>
+	{% endif %}
+{% endblock %}
