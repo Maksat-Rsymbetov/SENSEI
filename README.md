@@ -11,7 +11,7 @@ Project is written in Django backend framework, is fully functional and working.
 1) git clone this repository: `git clone https://github.com/Maksat-Rsymbetov/SENSEI`
 2) inside a repository folder, run the environment: `source env/bin/activate`
 3) if you're running Windows, the command above will not work for you, you have to set up another virtual anvironment, activate it and install Django to it.
-4) while environment is running, go into project's main application and run the website: `cd studying site` and then `python mamange.py runserver`
+4) while environment is running, go into project's main application and run the website: `cd studying site` and then `python manage.py runserver`
 5) Go to: `http://127.0.0.1:8000/` and site should show up.
 
 # What can you do in this site?
